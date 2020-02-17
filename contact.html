@@ -110,10 +110,31 @@
 
    <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <center><button class="btn btn-primary">CONTACT US</button></center>
+          <center><button class="btn btn-primary" type="submit">CONTACT US</button></center>
         </div>
   </div>
   </div>
+
+  <form class="contact_form" method="post" action="mail.php">
+     <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="alert alert-success contac_msg" style="display:none;" role="alert" >
+          your message has been sent
+          </div>
+        </div>
+     </div> 
+
+  <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <input type="text" class="form-control" id="name" placeholder="name">
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <input name="submit" type="submit" class="form-control" value="send message" id="name" >
+        </div>
+  </div> 
+    
+  </form>
 
   </div>
   </div>
