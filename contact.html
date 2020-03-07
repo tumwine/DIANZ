@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>DIANZ UNISEX SALOON</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
 </nav>
 
 <div class="container-fluid" style="margin-top:50px;">
-   <div class="row">  
+  <div class="row" style="margin-top:20px;">
 
    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
     <div class="container-fluid" style="margin-top:10px;">
@@ -53,7 +54,9 @@
 </div>
 </div>
 
-     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-left:50px; padding-right:50px;" >
+     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+     <form class="form-area contact-form  sendEmail" id="myForm" method="post" >
+
   <div class="row" style="margin-top:20px;">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="form-group">
@@ -61,7 +64,8 @@
              <input type="text" class="form-control" id="firstname" placeholder="Firstname">
          </div>
         </div>
-   </div>     
+   </div>
+
   <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="form-group">
@@ -75,7 +79,8 @@
        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="form-group">
              <label for="firstname" class="control-label">Email</label>
-             <input type="text" class="form-control" id="firstname" placeholder="Firstname">
+             <input  placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"  
+             class="common-input mb-20 form-control" required="" type="email" id="from">  
          </div>
         </div>
   </div>      
@@ -84,7 +89,7 @@
        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="form-group">
              <label for="firstname" class="control-label">Phone no.</label>
-             <input type="text" class="form-control" id="firstname" placeholder="Firstname">
+             <input type="number" class="form-control" id="subject" placeholder="0777729909" minlength="9">
          </div>
         </div>
   </div>
@@ -102,39 +107,29 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <label for="firstname" class="control-label">Remarks</label> 
           <div class="form-group">        
-          <textarea rows="4" name="comment" form="usrform" style="width:100%;"></textarea>
+          <textarea rows="4" id="emailbody" style="width:100%;" required="true" minlength="10"></textarea>
          </div>
         </div>
   </div>
- 
+
+   <!--Replace Value with the email to recieve responses from this form-->
+<input type="email" class="form-control invisible" id="to" value="tumwineivan20@gmail.com" >
+
+<div class="mdl-spinner mdl-js-spinner is-active" align="center">
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+
+  <span class="success-help primary">Your message has been sent!</span>
 
    <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <center><button class="btn btn-primary" type="submit">CONTACT US</button></center>
+          <center><button class="btn btn-primary" type="submit">SEND MESSAGE</button></center>
         </div>
   </div>
-  </div>
 
-  <form class="contact_form" method="post" action="mail.php">
-     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="alert alert-success contac_msg" style="display:none;" role="alert" >
-          your message has been sent
-          </div>
-        </div>
-     </div> 
-
-  <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <input type="text" class="form-control" id="name" placeholder="name">
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-             <input name="submit" type="submit" class="form-control" value="send message" id="name" >
-        </div>
-  </div> 
-    
   </form>
+
+  </div>
 
   </div>
   </div>
@@ -150,6 +145,7 @@
   </div>
 
     <script src="jq/jquery.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
 </body>
